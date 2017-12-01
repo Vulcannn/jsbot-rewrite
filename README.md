@@ -5,6 +5,17 @@ All source code above is written and tested by my self. If I ever do a collabora
 
 If you have any questions or bug reports etc then feel free to open up an issue on this repo and I will get back to you!
 
+## Basic ping command
+
+```javascript
+  
+  case "ping":
+			message.channel.send("Pong!");
+			console.log(message.author.username ": Ran the command - ping");
+			break;
+
+```
+
 # Requirements
 
 * [Node.js](https://nodejs.org/en/)

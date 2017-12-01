@@ -5,6 +5,7 @@ const status = "In development!";                                            //l
 const owner = ""; 															 //enter bot owner id (this might come in handy later!)
 
 var bot = new Discord.Client();
+var embed = new Discord.RichEmbed()
 var fortunes = [
 	"Yes",
 	"No",
@@ -27,6 +28,9 @@ bot.on("message", function(message){
 	}
 });
 
+bot.on("guilMemberAdd", function(member) {
+	member.guild.channels.find("name","general").send(member.toString() + " welcome to ", guild.Name, "enjoy your stay!");
+});
 
 bot.on("message", function(message){
 	if (message.author.equals(bot.user)) return;
@@ -50,6 +54,29 @@ bot.on("message", function(message){
 			if (args[1]) message.channel.send(fortunes[Math.floor(Math.random() * fortunes.length)]); 
 			else message.channel.send("Please ask me a valid question");
 			break;
+
+		case "embedtest":
+			var embed = new Discord.RichEmbed()
+				.addField("v2","description")
+				.addField("v2","description")
+				.addField("v2","description")
+				//.addField("v2","description", true)  //for these two true to be in line
+				//.addField("v2","description", true)
+				//.setColor("Blue")
+				.setColor(0x14fbff) //https://www.hexcolortool.com/
+				//.setDescription("Test Embed");
+				.setFooter("jsBot 2.0 ~ By Vulcan")
+				.setThumbnail(message.author.avatarURL)
+
+			message.channel.send(embed);
+			console.log(message.author.username, ": Ran the command - embedtest")
+			break;
+
+		case "tagme":
+			message.channel.send(message.author.toString() + "testing a tag");
+			console.log(message.author.username, " Tagged themself with - tagme")
+			break;
+
 		
 		default:
 			message.channel.send("That is an invalid command!");

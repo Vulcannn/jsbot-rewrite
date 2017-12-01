@@ -26,3 +26,19 @@ This could be set to change if there is a more efficent way of doing it! Althoug
 
 # How to run
 
+### Follow the ***three*** simple steps below to get your own instance running! ***providing you have the requirements above***
+
+* Download the Bot
+
+* Edit required information *so the bot can run*
+	* Line 2 ~ Bots Token  	       (**required**)
+	* Line 3 ~ Bots Prefix 	       (**required**)
+	* Line 4 ~ Bots Playing Status (**not required**)
+	* Line 5 ~ Bots owner ID       (**not required as of Version: 2.0**)
+
+* Run bot.js
+	* (Run in your bots root directory) `node bot`
+
+### Enjoy! Show us your own insance running!
+
+

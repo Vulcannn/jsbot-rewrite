@@ -1,10 +1,15 @@
 const Discord = require("Discord.js");
-const token = "token";                                                //enter bot token here
-const prefix = "prefix"; 														                  //enter bots prefix here
-const status = "gamehere";                                            //leave empty if you do not want a game status
-const owner = "ownerid"; 															                //enter bot owner id (this might come in handy later!)
+const token = "MzQ2NjA1NTM1OTUwMjc0NTYx.DQMvow.dd7lf8gQaur9xam4JEnPjXjuHIo"; //enter bot token here
+const prefix = "+"; 														 //enter bots prefix here
+const status = "In development!";                                            //leave empty if you do not want a game status
+const owner = ""; 															 //enter bot owner id (this might come in handy later!)
 
 var bot = new Discord.Client();
+var fortunes = [
+	"Yes",
+	"No",
+	"Maybe"
+];
 
 bot.on("ready", function(){
 	console.log("----------------------------------")
@@ -32,22 +37,27 @@ bot.on("message", function(message){
 	switch (args[0].toLowerCase()) {
 		case "ping":
 			message.channel.send("Pong!");
-			console.log(message.author.username ": Ran the command - ping");
+			console.log(message.author.username, " : Ran the command - ping");
 			break;
 
 		case "info":
 			message.channel.send("js Bot 2.0");
 			message.channel.send("This bot is being re written!");
-			console.log(message.author.username ": ran the command - info");
+			console.log(message.author.username , " : ran the command - info");
 			break;
 
-			default:
+		case "8ball":
+			if (args[1]) message.channel.send(fortunes[Math.floor(Math.random() * fortunes.length)]); 
+			else message.channel.send("Please ask me a valid question");
+			break;
+		
+		default:
 			message.channel.send("That is an invalid command!");
-			console.log(message.author.username , ": tried the command :" , message.content, "which does not exist!");
+			console.log(message.author.username , " : tried the command :" , message.content, "which does not exist!");
 
 
 	}
-})
+});
 
 
 

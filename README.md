@@ -32,7 +32,7 @@ bot.on("message", async message => {
 
   if(command === "ping") {
     const m = await message.channel.send("Pong");
-    console.log("Ping command ran!);
+    console.log("Ping command ran!");
     
     }
 ```

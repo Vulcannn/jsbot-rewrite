@@ -34,7 +34,8 @@ bot.on("message", async message => {
     const m = await message.channel.send("Pong");
     console.log("Ping command ran!);
     
-    }```
+    }
+```
 
 # Requirements
 

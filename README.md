@@ -6,7 +6,9 @@ All source code above is written and tested by my self. If I ever do a collabora
 If you have any questions or bug reports etc then feel free to open up an issue on this repo and I will get back to you!
 
 ## Basic ping command
-This could be set to change if there is a more efficent way of doing it! Although for now this is how it is staying
+The bots can be written in many different ways:
+
+Basic Ping Command **(A)**
 
 ```javascript
   
@@ -16,6 +18,23 @@ This could be set to change if there is a more efficent way of doing it! Althoug
 	break;
 
 ```
+
+Basic Ping Command **(B)**
+
+```javascript
+bot.on("message", async message => {
+
+  if(message.author.bot) return;
+  if(message.content.indexOf(prefix) !== 0) return;
+  
+  const args = message.content.slice(prefix.length).trim().split(/ +/g);
+  const command = args.shift().toLowerCase();
+
+  if(command === "ping") {
+    const m = await message.channel.send("Pong");
+    console.log("Ping command ran!);
+    
+    }```
 
 # Requirements
 

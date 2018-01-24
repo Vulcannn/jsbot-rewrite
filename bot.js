@@ -1,9 +1,8 @@
 const Discord = require("Discord.js");
 const token = "token"; //enter bot token here
-const prefix = "+"; 														 //enter bots prefix here
-const status = "In development!";                                            //leave empty if you do not want a game status
-const owner = ""; 															 //enter bot owner id (this might come in handy later!)
-
+const prefix = "+"; //enter bots prefix here
+const status = "In development!"; //leave empty if you do not want a game status
+const owner = ""; //enter owner id
 var bot = new Discord.Client();
 var embed = new Discord.RichEmbed()
 var fortunes = [

@@ -27,7 +27,7 @@ bot.on("message", function(message){
 	}
 });
 
-bot.on("guilMemberAdd", function(member) {
+bot.on("guildMemberAdd", function(member) {
 	member.guild.channels.find("name","general").send(member.toString() + " welcome to ", guild.Name, "enjoy your stay!");
 });
 
